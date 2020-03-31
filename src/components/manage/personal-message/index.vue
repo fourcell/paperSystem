@@ -1,0 +1,99 @@
+<template>
+  <div class="personal-message">
+    <div class="title">
+      <p>基本信息</p>
+    </div>
+    <el-form ref="form" :rules="rules" :model="formData" label-width="100px" label-position="left">
+      <div class="update">
+        <el-checkbox v-model="formData.checked">修改基本信息</el-checkbox>
+      </div>
+      <el-form-item label="姓名" prop="name">
+        <el-input v-model="formData.name"></el-input>
+      </el-form-item>
+      <el-form-item label="教师编号" prop="teacherId">
+        <el-input v-model="formData.teacherId"></el-input>
+      </el-form-item>
+      <el-form-item label="职称" prop="teacherTitle">
+        <el-input v-model="formData.teacherTitle"></el-input>
+      </el-form-item>
+      <el-form-item label="学历" prop="education">
+        <el-input v-model="formData.education"></el-input>
+      </el-form-item>
+      <el-form-item label="电话" prop="phone">
+        <el-input v-model="formData.phone"></el-input>
+      </el-form-item>
+      <el-form-item label="邮箱" prop="mailbox">
+        <el-input v-model="formData.mailbox"></el-input>
+      </el-form-item>
+      <el-form-item>
+        <el-button type="primary">确认保存</el-button>
+      </el-form-item>
+    </el-form>
+  </div>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      formData: {
+        checked: "", //修改状态
+        name: "", //姓名
+        teacherId: "", //教师编号
+        teacherTitle: "", //职称
+        education: "", //学历
+        phone: "", //电话
+        mailbox: "" //邮箱
+      },
+      rules: {
+        name: [
+          { required: true, message: "请输入姓名", trigger: "blur" },
+          { message: "姓名格式有误", pattern: /^[\u4e00-\u9fa5]{0,20}$/ }
+        ],
+        teacherId: [
+          { required: true, message: "请输入教师编号", trigger: "blur" },
+          { message: "教师编号格式有误", pattern: /^\d{0,10}$/ }
+        ],
+        teacherTitle: [
+          { required: true, message: "请输入职称", trigger: "blur" },
+          { message: "职称格式有误", pattern: /^[\u4e00-\u9fa5]{0,20}$/ }
+        ],
+        education: [
+          { required: true, message: "请输入学历", trigger: "blur" },
+          { message: "学历格式有误", pattern: /^[\u4e00-\u9fa5]{0,20}$/ }
+        ],
+        phone: [
+          { required: true, message: "请输入电话", trigger: "blur" },
+          { message: "电话格式有误", pattern: /^(0|86|17951)?(13[0-9]|15[012356789]|166|17[3678]|18[0-9]|14[57])[0-9]{8}$/}
+        ],
+        mailbox: [
+          { required: true, message: "请输入邮箱", trigger: "blur" },
+          { message: "邮箱格式有误", pattern: /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/}
+        ],
+      }
+    };
+  }
+};
+</script>
+<style lang="scss">
+.personal-message {
+  padding: 20px;
+  .title {
+    height: 30px;
+    border-bottom: 1px solid #d0dee5;
+    p {
+      width: 70px;
+      line-height: 30px;
+      border-bottom: 2px solid #66c9f3;
+    }
+  }
+  .el-form {
+    padding-top: 30px;
+    input {
+      width: 390px;
+    }
+    .update {
+      margin-bottom: 22px;
+    }
+  }
+}
+</style>

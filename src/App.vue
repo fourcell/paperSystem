@@ -8,7 +8,10 @@
 
 export default {
   name: 'App',
-  components: {
+  watch:{
+    '$route.meta'(val) {
+      this.$store.commit('title',val.title)
+    },
   }
 }
 </script>

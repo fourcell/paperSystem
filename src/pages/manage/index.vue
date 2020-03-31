@@ -7,8 +7,8 @@
   </div>
 </template>
 <script>
-import Header from "../../components/manage/home/header";
-import Main from "../../components/manage/home/main";
+import Header from "../../components/manage/header";
+import Main from "../../components/manage/main";
 export default {
   components: {
     Header,

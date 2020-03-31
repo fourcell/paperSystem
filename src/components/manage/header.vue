@@ -39,6 +39,7 @@ header {
         font-size: 14px;
         border-right: 1px dashed #000;
         text-align: center;
+        cursor: pointer;
       }
       li:nth-child(3) {
         border: none;
