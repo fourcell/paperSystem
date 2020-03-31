@@ -25,7 +25,7 @@
             <el-form-item>
               <template>
                 <div class="botton">
-                  <el-button type="primary">登录</el-button>
+                  <el-button type="primary" @click="submitForm">登录</el-button>
                   <el-radio v-model="formData.radio" label="1">学生</el-radio>
                   <el-radio v-model="formData.radio" label="2">老师</el-radio>
                   <el-radio v-model="formData.radio" label="3">管理员</el-radio>
@@ -52,6 +52,23 @@ export default {
         password: [{ required: true, message: "请输入密码", trigger: "blur" }]
       }
     };
+  },
+  methods:{
+    //表单校验
+    submitForm(){
+        this.$refs.form.validate((valid) => {
+          if (valid) {
+            this.toLog()
+          } else {
+            return false;
+          }
+        });
+    },
+    //登录 接口请求
+    toLog(){
+      this.$router.push({path:"/manage/home"})
+      window.localStorage.setItem("type",3);
+    }
   }
 };
 </script>

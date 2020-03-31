@@ -4,7 +4,7 @@
       <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
         <div class="navMenuTitel"></div>
         <el-menu background-color="#d4e7f0" :router="true">
-          <el-menu-item v-for="(item,index) in Administrator" :key="index" :index="item.path">
+          <el-menu-item v-for="(item,index) in roleData" :key="index" :index="item.path">
             <i class="el-icon-chat-line-square"></i>
             <span slot="title">{{item.title}}</span>
           </el-menu-item>
@@ -23,10 +23,35 @@
 <script>
 import { Administrator } from "./const/administrator-list";
 export default {
+  props: {
+    type: {
+      type: String,
+      required: true
+    }
+  },
   data() {
     return {
-      Administrator
+      Administrator,
+      roleData: []
     };
+  },
+  created() {
+    this.toRouter(this.type);
+  },
+  methods: {
+    toRouter(value) {
+      switch (value) {
+        case "0":
+          this.roleData = Administrator;
+          break;
+        case "1":
+          this.roleData = Administrator;
+          break;
+        case "2":
+          this.roleData = Administrator;
+          break;
+      }
+    }
   }
 };
 </script>

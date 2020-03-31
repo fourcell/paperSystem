@@ -2,7 +2,7 @@
   <div class="manage">
     <el-container>
       <Header />
-      <Main />
+      <Main :type="type" />
     </el-container>
   </div>
 </template>
@@ -13,6 +13,14 @@ export default {
   components: {
     Header,
     Main
+  },
+  data() {
+    return {
+      type: 0
+    };
+  },
+  created() {
+    this.type = window.localStorage.getItem("type");
   }
 };
 </script>
