@@ -40,7 +40,7 @@
   </div>
 </template>
 <script>
-import { Role } from "../const/administrator-list";
+import { Role } from "../../const/administrator-list";
 export default {
   data() {
     return {

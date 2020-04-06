@@ -37,7 +37,7 @@
   </div>
 </template>
 <script>
-import { consequence } from "../const/select";
+import { consequence } from "../../const/select";
 import Table from "../../table/index";
 export default {
   data() {

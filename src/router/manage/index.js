@@ -54,7 +54,7 @@ const Manage = [
             {
                 path:'controlProgress',
                 name:'controlProgress',
-                component:()=>import('../../pages/manage/control-progress.vue'),
+                component:()=>import('../../pages/manage/control-progress'),
                 meta:{
                     title:'控制进度'
                 },

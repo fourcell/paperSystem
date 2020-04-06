@@ -39,3 +39,14 @@ export const Role = [
         value: 2,
     }
 ]
+
+export const State = [
+    {
+        label: '开启',
+        value: 1
+    },
+    {
+        label: '关闭',
+        value: 0
+    },
+]

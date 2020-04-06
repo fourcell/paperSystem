@@ -53,21 +53,21 @@ export default {
       }
     };
   },
-  methods:{
+  methods: {
     //表单校验
-    submitForm(){
-        this.$refs.form.validate((valid) => {
-          if (valid) {
-            this.toLog()
-          } else {
-            return false;
-          }
-        });
+    submitForm() {
+      this.$refs.form.validate(valid => {
+        if (valid) {
+          this.toLog();
+        } else {
+          return false;
+        }
+      });
     },
     //登录 接口请求
-    toLog(){
-      this.$router.push({path:"/manage/home"})
-      window.localStorage.setItem("type",3);
+    toLog() {
+      this.$router.push({ path: "/manage/home" });
+      window.localStorage.setItem("type", 2);
     }
   }
 };
@@ -92,7 +92,7 @@ main {
       height: 100%;
       img {
         width: 250px;
-        height: 360px;
+        height: 349px;
         display: inline-block;
       }
     }

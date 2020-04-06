@@ -21,7 +21,7 @@
   </el-main>
 </template>
 <script>
-import { Administrator } from "./const/administrator-list";
+import { Administrator } from "../const/administrator-list";
 export default {
   props: {
     type: {
