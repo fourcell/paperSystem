@@ -1,8 +1,13 @@
 <template>
-    <div>数据分析</div>
+  <div>
+    <DataAnalyze />
+  </div>
 </template>
 <script>
+import DataAnalyze from "../../../components/manage/data-analyze/index";
 export default {
-    
-}
+  components: {
+    DataAnalyze
+  }
+};
 </script>
