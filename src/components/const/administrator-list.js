@@ -7,14 +7,14 @@ export const Administrator = [
         title: "添加用户",
         path: "/manage/addUser"
     },
-    // {
-    //     title: "数据分析",
-    //     path: "/manage/dataAnalyze"
-    // },
-    // {
-    //     title: "设置数据",
-    //     path: "/manage/configData"
-    // },
+    {
+        title: "数据分析",
+        path: "/manage/dataAnalyze"
+    },
+    {
+        title: "设置数据",
+        path: "/manage/configData"
+    },
     {
         title: "选题情况",
         path: "/manage/selectCondition"
