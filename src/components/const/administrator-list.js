@@ -5,7 +5,25 @@ export const Administrator = [
     },
     {
         title: "添加用户",
-        path: "/manage/addUser"
+        // path: "/manage/addUser",
+        children: [
+            {
+                title: '学校管理',
+                path: "/456"
+            },
+            {
+                title: '系别管理',
+                path: "/56"
+            },
+            {
+                title: '老师管理',
+                path: "/89"
+            },
+            {
+                title: '学生管理',
+                path: "/manage/addUser"
+            },
+        ]
     },
     {
         title: "数据分析",
