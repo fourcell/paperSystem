@@ -5,7 +5,7 @@
         <el-input v-model="progressData.menu" placeholder></el-input>
       </el-form-item>
       <el-form-item label="使用者">
-        <el-select v-model="progressData.user" placeholder="使用者">
+        <el-select v-model="progressData.userName" placeholder="使用者">
           <el-option label="全部" value="3"></el-option>
           <el-option v-for="item in Role" :key="item.value" :label="item.label" :value="item.value"></el-option>
         </el-select>
@@ -29,8 +29,17 @@ export default {
     return {
       Role,
       State,
-      progressData: { menu: "", user: "3", state: 1 }
+      progressData: { menu: "", userName: "3", state: 1 }
     };
+  },
+  created() {
+    let that = this;
+    this.axios.get("http://localhost:9091/administrator/selectControl", {})
+            .then(function (res) {
+
+              console.log(res);
+              that.tableData = res.data;
+            })
   }
 };
 </script>

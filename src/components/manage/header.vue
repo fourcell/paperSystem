@@ -8,13 +8,22 @@
       </ul>
       <p>
         <i class="el-icon-user"></i>
-        <span>99999</span>
+        <span id="name" v-text="name">99999</span>
       </p>
     </div>
   </el-header>
 </template>
 <script>
-export default {};
+  export default {
+    data(){
+      return{
+        name:''
+      }
+    },
+    created() {
+     this.name = window.localStorage.getItem("userId");
+    }
+  };
 </script>
 <style lang="scss" scoped>
 header {

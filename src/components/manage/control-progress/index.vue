@@ -17,23 +17,13 @@
         </template>
       </el-table-column>
     </el-table>
-    <el-pagination
-      @size-change="handleSizeChange"
-      @current-change="handleCurrentChange"
-      :current-page="currentPage"
-      :page-sizes="[10, 20, 30, 40]"
-      :page-size="100"
-      layout="total, sizes, prev, pager, next, jumper"
-      :total="total"
-    ></el-pagination>
+
   </div>
 </template>
 <script>
 export default {
   data() {
     return {
-      currentPage: 1,
-      total: 20,
       tableData: [
         {
           date: "2016-05-02",
@@ -57,6 +47,15 @@ export default {
         }
       ]
     };
+
+  },
+  created() {
+    let that = this;
+    this.axios.get("http://localhost:9091/administrator/selectControl", {})
+            .then(function (res) {
+              console.log(res);
+              that.tableData = res.data;
+            })
   },
   methods: {
     handleSizeChange() {
@@ -74,6 +73,7 @@ export default {
       console.log(parm);
     }
   }
+
 };
 </script>
 <style lang="scss" scoped>
