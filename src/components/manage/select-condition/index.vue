@@ -4,22 +4,9 @@
       :model="dynamicValidateForm"
       ref="dynamicValidateForm"
       label-width="80px"
-      class="demo-dynamic"
-    >
-      <el-form-item label="学生姓名">
-        <el-input v-model="dynamicValidateForm.studentName"></el-input>
-      </el-form-item>
+      class="demo-dynamic">
       <el-form-item label="学生学号">
-        <el-input v-model="dynamicValidateForm.studentId"></el-input>
-      </el-form-item>
-      <el-form-item label="论文题目">
-        <el-input v-model="dynamicValidateForm.paperTopic"></el-input>
-      </el-form-item>
-      <el-form-item label="教师姓名">
-        <el-input v-model="dynamicValidateForm.teacherName"></el-input>
-      </el-form-item>
-      <el-form-item label="教师编号">
-        <el-input v-model="dynamicValidateForm.teacherId"></el-input>
+        <el-input v-model="dynamicValidateForm.stuId"></el-input>
       </el-form-item>
       <el-form-item label="处理结果">
         <el-select v-model="dynamicValidateForm.disposeResult" disposeResult="请选择">
@@ -44,9 +31,9 @@ export default {
     return {
       consequence,
       dynamicValidateForm: {
-        studentName: "", //学生姓名
-        studentId: "", //学生学号
-        paperTopic: "", //论文题目
+        stuName: "", //学生姓名
+        stuId: "", //学生学号
+        topicName: "", //论文题目
         teacherName: "", //教师姓名
         teacherId: "", //教师编号
         disposeResult: "" //处理结果
@@ -55,42 +42,42 @@ export default {
         {
           prop: "id",
           label: "编号",
-          'min-width':120,
+          'min-width':80,
         },
         {
-          prop: "studentName",
+          prop: "stuName",
           label: "学生姓名",
           minWidth:120,
         },
         {
-          prop: "studentId",
+          prop: "stuId",
           label: "学生学号",
           minWidth:120,
         },
         {
-          prop: "specialty",
+          prop: "className",
           label: "专业",
-          minWidth:120,
+          minWidth:160,
         },
         {
-          prop: "grade",
+          prop: "classId",
           label: "班级",
-          minWidth:120,
+          minWidth:150,
         },
         {
-          prop: "studentPhone",
+          prop: "stuPhone",
           label: "电话",
-          minWidth:120,
+          minWidth:160,
         },
         {
-          prop: "studentEmail",
+          prop: "stuEmail",
           label: "邮箱",
-          minWidth:120,
+          minWidth:160,
         },
         {
-          prop: "paperTopic",
+          prop: "topicName",
           label: "论文题目",
-          minWidth:120,
+          minWidth:130,
         },
         {
           prop: "teacherId",
@@ -103,19 +90,19 @@ export default {
           minWidth:120,
         },
         {
-          prop: "teacherAcademic",
+          prop: "education",
           label: "教师职称",
           minWidth:120,
         },
         {
           prop: "teacherPhone",
           label: "电话",
-          minWidth:120,
+          minWidth:160,
         },
         {
           prop: "teacherEmail",
           label: "邮箱",
-          minWidth:120,
+          minWidth:160,
         },
         {
           prop: "disposeResult",

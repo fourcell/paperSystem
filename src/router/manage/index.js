@@ -24,7 +24,7 @@ const Manage = [
                 name:'addUser',
                 component:()=>import('../../pages/manage/add-user'),
                 meta:{
-                    title:'添加用户'
+                    title:'用户管理'
                 },
             },
             {
