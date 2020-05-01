@@ -18,7 +18,6 @@
           <div v-for="(item,index) in roleData" :key="index">
             <el-submenu v-if="item.children">
               <template slot="title">
-                <i class="el-icon-location"></i>
                 <span slot="title">{{item.title}}</span>
               </template>
 
@@ -33,7 +32,6 @@
             </el-menu-item>-->
             <template v-if="!item.children">
               <el-menu-item :index="item.path">
-                <i class="el-icon-chat-line-square"></i>
                 <span slot="title">{{item.title}}</span>
               </el-menu-item>
             </template>
