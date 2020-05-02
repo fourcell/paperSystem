@@ -4,7 +4,8 @@
       :model="dynamicValidateForm"
       ref="dynamicValidateForm"
       label-width="80px"
-      class="demo-dynamic">
+      class="demo-dynamic"
+    >
       <el-form-item label="学生学号">
         <el-input v-model="dynamicValidateForm.stuId"></el-input>
       </el-form-item>
@@ -20,7 +21,7 @@
       </el-form-item>
       <el-button class="button" type="primary">查询</el-button>
     </el-form>
-    <Table :columns="columns" class="table" />
+    <Table :columns="columns" class="table" @pagination="toPagination" @pages="toPages" />
   </div>
 </template>
 <script>
@@ -42,83 +43,93 @@ export default {
         {
           prop: "id",
           label: "编号",
-          'min-width':80,
+          "min-width": 80
         },
         {
           prop: "stuName",
           label: "学生姓名",
-          minWidth:120,
+          minWidth: 120
         },
         {
           prop: "stuId",
           label: "学生学号",
-          minWidth:120,
+          minWidth: 120
         },
         {
           prop: "className",
           label: "专业",
-          minWidth:160,
+          minWidth: 160
         },
         {
           prop: "classId",
           label: "班级",
-          minWidth:150,
+          minWidth: 150
         },
         {
           prop: "stuPhone",
           label: "电话",
-          minWidth:160,
+          minWidth: 160
         },
         {
           prop: "stuEmail",
           label: "邮箱",
-          minWidth:160,
+          minWidth: 160
         },
         {
           prop: "topicName",
           label: "论文题目",
-          minWidth:130,
+          minWidth: 130
         },
         {
           prop: "teacherId",
           label: "教师编号",
-          minWidth:120,
+          minWidth: 120
         },
         {
           prop: "teacherName",
           label: "教师姓名",
-          minWidth:120,
+          minWidth: 120
         },
         {
           prop: "education",
           label: "教师职称",
-          minWidth:120,
+          minWidth: 120
         },
         {
           prop: "teacherPhone",
           label: "电话",
-          minWidth:160,
+          minWidth: 160
         },
         {
           prop: "teacherEmail",
           label: "邮箱",
-          minWidth:160,
+          minWidth: 160
         },
         {
           prop: "disposeResult",
           label: "处理结果",
-          minWidth:120,
+          minWidth: 120
         },
         {
           prop: "remarks",
           label: "备注",
-          minWidth:120,
-        },
+          minWidth: 120
+        }
       ]
     };
   },
   components: {
     Table
+  },
+  methods: {
+    toPagination(val) {
+      //这里是切换显示的条数
+      window.console.log(val);
+    },
+    toPages(val) {
+      //这里是切换页数，两个数据可以在data中存起来
+      window.console.log(val);
+    }
   }
 };
 </script>
@@ -134,8 +145,8 @@ export default {
       margin-left: 20px;
     }
   }
-  .table{
-      padding: 20px;
+  .table {
+    padding: 20px;
   }
 }
 </style>
