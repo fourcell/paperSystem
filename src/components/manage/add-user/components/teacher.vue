@@ -23,7 +23,7 @@
         <el-input v-model="ruleForm.className"></el-input>
       </el-form-item>
       <el-form-item label="密码" prop="pass">
-        <el-input v-model="ruleForm.pass"></el-input>
+        <el-input v-model="ruleForm.pass" show-password></el-input>
       </el-form-item>
       <el-form-item label="电话" prop="phone">
         <el-input v-model="ruleForm.phone"></el-input>
@@ -133,7 +133,8 @@ export default {
 .add-user {
   padding: 20px;
   .el-form {
-    input {
+    input,
+    .el-input {
       width: 390px;
     }
   }
