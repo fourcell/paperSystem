@@ -8,22 +8,25 @@
         <el-checkbox v-model="formData.checked">修改基本信息</el-checkbox>
       </div>
       <el-form-item label="管理员编号" prop="id">
-        <el-input v-model="formData.id"></el-input>
+        <el-input v-model="formData.id" :disabled="!formData.checked"></el-input>
       </el-form-item>
       <el-form-item label="姓名" prop="name">
-        <el-input v-model="formData.name"></el-input>
+        <el-input v-model="formData.name" :disabled="!formData.checked"></el-input>
       </el-form-item>
       <el-form-item label="系名" prop="depName">
-        <el-input v-model="formData.depName"></el-input>
+        <el-input v-model="formData.depName" :disabled="!formData.checked"></el-input>
       </el-form-item>
       <el-form-item label="学历" prop="education">
-        <el-input v-model="formData.education"></el-input>
+        <el-input v-model="formData.education" :disabled="!formData.checked"></el-input>
       </el-form-item>
       <el-form-item label="电话" prop="phone">
-        <el-input v-model="formData.phone"></el-input>
+        <el-input v-model="formData.phone" :disabled="!formData.checked"></el-input>
+      </el-form-item>
+      <el-form-item label="密码" prop="pass">
+        <el-input v-model="formData.pass" :disabled="!formData.checked"></el-input>
       </el-form-item>
       <el-form-item label="邮箱" prop="email">
-        <el-input v-model="formData.email"></el-input>
+        <el-input v-model="formData.email" :disabled="!formData.checked"></el-input>
       </el-form-item>
       <el-form-item>
         <el-button type="primary">确认保存</el-button>
@@ -42,7 +45,8 @@ export default {
         depName: "", //系名
         education: "", //学历
         phone: "", //电话
-        email: "" //邮箱
+        email: "", //邮箱
+        pass:""//密码
       },
       rules: {
         id: [
@@ -64,6 +68,10 @@ export default {
         phone: [
           { required: true, message: "请输入电话", trigger: "blur" },
           { message: "电话格式有误", pattern: /^(0|86|17951)?(13[0-9]|15[012356789]|166|17[3678]|18[0-9]|14[57])[0-9]{8}$/}
+        ],
+        pass: [
+          { required: true, message: "请输入密码", trigger: "blur" },
+          { message: "密码格式有误", pattern: /^\w{6,16}$/}
         ],
         email: [
           { required: true, message: "请输入邮箱", trigger: "blur" },

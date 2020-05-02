@@ -4,24 +4,24 @@ export const Administrator = [
         path: "/manage/personalMessage"
     },
     {
-        title: "添加用户",
-        // path: "/manage/addUser",
+        title: "管理系统",
+        path: "/manage",
         children: [
             {
                 title: '学校管理',
-                path: "/456"
+                path: "/manage/school"
             },
             {
                 title: '系别管理',
-                path: "/56"
+                path: "/manage/department"
             },
             {
                 title: '老师管理',
-                path: "/89"
+                path: "/manage/teacher"
             },
             {
                 title: '学生管理',
-                path: "/manage/addUser"
+                path: "/manage/student"
             },
         ]
     },
